@@ -2,19 +2,19 @@
 
 import React from "react";
 
-const Message = ({ message }) => {
+const Message = React.memo(({ message }) => {
   return <p>{message}</p>;
-};
+});
 
-const ListItem = ({ post }) => {
+const ListItem = React.memo(({ post }) => {
   return (
     <li>
       <p>{post.title}</p>
     </li>
   );
-};
+});
 
-const List = ({ posts }) => {
+const List = React.memo(({ posts }) => {
   return (
     <ul>
       {posts.map((post) => (
@@ -22,7 +22,7 @@ const List = ({ posts }) => {
       ))}
     </ul>
   );
-};
+});
 
 const B = ({ message, posts }) => {
   return (
